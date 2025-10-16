@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class CategoriaService {
 
-    private CategoriaRepository repository;
+    private final CategoriaRepository repository;
 
     public CategoriaService(CategoriaRepository categoriaRepository){
         repository = categoriaRepository;

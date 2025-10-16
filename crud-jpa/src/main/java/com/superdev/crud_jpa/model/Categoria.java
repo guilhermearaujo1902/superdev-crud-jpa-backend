@@ -1,11 +1,15 @@
 package com.superdev.crud_jpa.model;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.lang.NonNull;
 
 @Getter
 @Setter
@@ -18,10 +22,9 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Nonnull
+    @NonNull
     private String nome;
 
-    @Nonnull
+    @NonNull
     private boolean status;
-
 }
