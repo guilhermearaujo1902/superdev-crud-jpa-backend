@@ -1,15 +1,14 @@
 package com.superdev.crud_jpa.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.Builder;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.NonNull;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,4 +26,7 @@ public class Categoria {
 
     @NonNull
     private boolean status;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Produto> produtos;
 }
