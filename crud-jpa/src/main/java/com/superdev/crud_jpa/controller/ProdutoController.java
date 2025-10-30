@@ -33,6 +33,12 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produtoEncontrado);
     }
 
+    @GetMapping(value = "/filter/nome/{nome}")
+    public List<Produto> findByFilterNome(@PathVariable String nome) {
+        List<Produto> retornoService = service.findByFilterNome(nome);
+        return retornoService;
+    }
+
     @PostMapping(value = "/insert")
     public ResponseEntity<Produto> insert(@RequestBody Produto produto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(produto));

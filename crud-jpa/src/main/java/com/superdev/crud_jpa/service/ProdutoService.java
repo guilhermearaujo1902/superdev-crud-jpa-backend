@@ -74,4 +74,15 @@ public class ProdutoService {
         return "Compra realizada com sucesso. Estoque atualizado: " + produtoAtual.getQuantidade();
     }
 
+    public List<Produto> findByFilterNome(String nome) {
+        List<Produto> retornoRepository;
+        if (nome.equals("null")) {
+            retornoRepository = this.findAll();
+        } else {
+            retornoRepository = repository.findByFilterNome(nome);
+        }
+
+        return retornoRepository;
+    }
+
 }
